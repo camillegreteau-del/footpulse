@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FootPulse — site d'actualité football moderne avec news, résultats, classement et mercato.">
+  <title>FootPulse — Toute l'actu football</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ma fiche de style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>⚡ FOOTPULSE</span>
+      <span id="liveClock">--:--</span>
+      <span class="topbar-message">L'actualité du football, sans détour.</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="#accueil" aria-label="FootPulse accueil">
+        <span class="logo-ball">⚽</span><span>FOOT<span>PULSE</span></span>
+      </a>
+      <button class="mobile-menu" id="mobileMenu" aria-label="Ouvrir le menu">☰</button>
+      <nav id="mainNav">
+        <a href="#accueil" class="active">Accueil</a>
+        <a href="#actus">Actualités</a>
+        <a href="#resultats">Résultats</a>
+        <a href="#classement">Classement</a>
+        <a href="#mercato">Mercato</a>
+        <a href="#videos">Vidéos</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" title="Changer le thème">☾</button>
+        <button id="searchToggle" class="icon-btn" title="Rechercher">⌕</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="breaking">
+    <div class="container breaking-inner">
+      <strong><span class="pulse-dot"></span> DERNIÈRE MINUTE</strong>
+      <div class="breaking-track">
+        <span>Le mercato s'accélère à l'approche de la nouvelle saison</span>
+        <span>•</span>
+        <span>Les grands rendez-vous européens se précisent</span>
+      </div>
+    </div>
+  </div>
+
+  <main id="accueil">
+    <section class="hero container">
+      <div class="hero-main">
+        <div class="hero-image image-fallback">
+          <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1500&q=85" alt="Match de football" onerror="this.style.display='none'">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <span class="tag tag-red">À LA UNE</span>
+            <h1>France - Belgique : les Bleus veulent finir le rassemblement sur une bonne note</h1>
+            <p>La France retrouve la Belgique ce 5 octobre au Stade de France, après sa victoire 1-0 à l'aller.</p>
+            <button class="read-btn" data-article="0">Lire l'article <span>→</span></button>
+          </div>
+        </div>
+      </div>
+      <aside class="hero-side">
+        <div class="side-title"><span>EN DIRECT</span><small>VOIR TOUT →</small></div>
+        <div class="live-match">
+          <div class="league">LIGUE DES NATIONS • 20H45</div>
+          <div class="teams">
+            <div><b>FRA</b><span>France</span></div>
+            <strong>—</strong>
+            <div><b>BEL</b><span>Belgique</span></div>
+          </div>
+          <div class="match-minute">Ce soir • Stade de France</div>
+        </div>
+        <div class="live-match">
+          <div class="league">LIGUE DES NATIONS • 20H45</div>
+          <div class="teams">
+            <div><b>ITA</b><span>Italie</span></div>
+            <strong>—</strong>
+            <div><b>TUR</b><span>Turquie</span></div>
+          </div>
+          <div class="match-minute">Ce soir • Bologne</div>
+        </div>
+        <div class="mini-news">
+          <span class="mini-time">15:42</span>
+          <p>Un jeune talent affole les recruteurs européens</p>
+        </div>
+        <div class="mini-news">
+          <span class="mini-time">14:58</span>
+          <p>Le coach répond aux rumeurs de départ</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="ticker-section">
+      <div class="container">
+        <div class="ticker-label">FLASH</div>
+        <div class="ticker-content" id="flashTicker">
+          <span>Mercato : plusieurs dossiers pourraient se débloquer cette semaine</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="actus" class="container section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">LE JOURNAL</span>
+          <h2>Les dernières actus</h2>
+        </div>
+        <div class="filters" id="filters">
+          <button class="filter active" data-filter="all">Toutes</button>
+          <button class="filter" data-filter="Ligue 1">Ligue 1</button>
+          <button class="filter" data-filter="Europe">Europe</button>
+          <button class="filter" data-filter="Mercato">Mercato</button>
+          <button class="filter" data-filter="International">International</button>
+        </div>
+      </div>
+      <div class="news-layout">
+        <div class="news-grid" id="newsGrid"></div>
+        <aside class="sidebar">
+          <div class="sidebar-card">
+            <div class="card-heading"><h3>LES PLUS LUS</h3><span>24H</span></div>
+            <ol class="popular-list">
+              <li><span>01</span><p>Les cinq joueurs à suivre cette saison</p></li>
+              <li><span>02</span><p>Pourquoi cette équipe change de système</p></li>
+              <li><span>03</span><p>Mercato : les dossiers qui font parler</p></li>
+              <li><span>04</span><p>Le calendrier des grands rendez-vous</p></li>
+              <li><span>05</span><p>Les pépites qui montent en puissance</p></li>
+            </ol>
+          </div>
+          <div class="newsletter">
+            <span class="newsletter-icon">✉</span>
+            <h3>La newsletter FootPulse</h3>
+            <p>Les infos essentielles du football, directement dans ta boîte.</p>
+            <form id="newsletterForm">
+              <input type="email" placeholder="Ton adresse e-mail" required>
+              <button>S'inscrire</button>
+            </form>
+            <small id="newsletterMsg"></small>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="resultats" class="dark-section">
+      <div class="container section">
+        <div class="section-heading light">
+          <div><span class="eyebrow">MATCH CENTER</span><h2>Résultats & prochains matchs</h2></div>
+          <div class="date-selector">
+            <button class="date-btn active">Hier</button><button class="date-btn">Aujourd'hui</button><button class="date-btn">Demain</button>
+          </div>
+        </div>
+        <div class="score-grid" id="scoreGrid">
+          <article class="score-card">
+            <div class="score-head"><span>LIGUE DES NATIONS</span><b>20H45</b></div>
+            <div class="score-team"><span class="crest">🇫🇷</span><span>France</span><strong>—</strong></div>
+            <div class="score-team"><span class="crest">🇧🇪</span><span>Belgique</span><strong>—</strong></div>
+            <div class="stadium">Stade de France • 5 oct.</div>
+          </article>
+          <article class="score-card">
+            <div class="score-head"><span>LIGUE DES NATIONS</span><b>20H45</b></div>
+            <div class="score-team"><span class="crest">🇮🇹</span><span>Italie</span><strong>—</strong></div>
+            <div class="score-team"><span class="crest">🇹🇷</span><span>Turquie</span><strong>—</strong></div>
+            <div class="stadium">Stadio Renato Dall'Ara • 5 oct.</div>
+          </article>
+          <article class="score-card">
+            <div class="score-head"><span>LIGUE DES NATIONS</span><b>TERMINÉ</b></div>
+            <div class="score-team"><span class="crest">🇫🇷</span><span>France</span><strong>1</strong></div>
+            <div class="score-team"><span class="crest">🇧🇪</span><span>Belgique</span><strong>0</strong></div>
+            <div class="stadium">Match aller • 28 sept.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="classement" class="container section">
+      <div class="section-heading">
+        <div><span class="eyebrow">LIGUE 1</span><h2>Classement</h2></div>
+        <select id="leagueSelect"><option>Ligue 1</option><option>Premier League</option><option>La Liga</option></select>
+      </div>
+      <div class="table-wrap">
+        <table class="standings">
+          <thead><tr><th>#</th><th>Équipe</th><th>MJ</th><th>V</th><th>N</th><th>D</th><th>BP</th><th>BC</th><th>Pts</th></tr></thead>
+          <tbody id="standingsBody">
+            <tr><td><span class="rank-badge">1</span></td><td><span class="team-name">Lyon</span></td><td>5</td><td>3</td><td>2</td><td>0</td><td>10</td><td>2</td><td><strong>11</strong></td></tr>
+            <tr><td><span class="rank-badge">2</span></td><td><span class="team-name">Monaco</span></td><td>5</td><td>4</td><td>1</td><td>0</td><td>8</td><td>3</td><td><strong>13</strong></td></tr>
+            <tr><td><span class="rank-badge">3</span></td><td><span class="team-name">Paris FC</span></td><td>5</td><td>3</td><td>2</td><td>0</td><td>8</td><td>3</td><td><strong>11</strong></td></tr>
+            <tr><td><span class="rank-badge">4</span></td><td><span class="team-name">Lille</span></td><td>5</td><td>3</td><td>1</td><td>1</td><td>8</td><td>4</td><td><strong>10</strong></td></tr>
+            <tr><td><span class="rank-badge">5</span></td><td><span class="team-name">Rennes</span></td><td>5</td><td>3</td><td>1</td><td>1</td><td>8</td><td>9</td><td><strong>10</strong></td></tr>
+            <tr><td><span class="rank-badge">6</span></td><td><span class="team-name">Strasbourg</span></td><td>5</td><td>2</td><td>1</td><td>2</td><td>10</td><td>10</td><td><strong>7</strong></td></tr>
+            <tr><td><span class="rank-badge">7</span></td><td><span class="team-name">Paris-SG</span></td><td>5</td><td>2</td><td>2</td><td>1</td><td>8</td><td>7</td><td><strong>8</strong></td></tr>
+            <tr><td><span class="rank-badge">8</span></td><td><span class="team-name">Le Mans</span></td><td>5</td><td>1</td><td>3</td><td>1</td><td>9</td><td>9</td><td><strong>6</strong></td></tr>
+            <tr><td><span class="rank-badge">9</span></td><td><span class="team-name">Angers</span></td><td>5</td><td>2</td><td>1</td><td>2</td><td>6</td><td>5</td><td><strong>7</strong></td></tr>
+            <tr><td><span class="rank-badge">10</span></td><td><span class="team-name">Lens</span></td><td>5</td><td>1</td><td>1</td><td>3</td><td>9</td><td>9</td><td><strong>4</strong></td></tr>
+            <tr><td><span class="rank-badge">11</span></td><td><span class="team-name">Auxerre</span></td><td>5</td><td>2</td><td>0</td><td>3</td><td>7</td><td>12</td><td><strong>6</strong></td></tr>
+            <tr><td><span class="rank-badge">12</span></td><td><span class="team-name">Brest</span></td><td>5</td><td>1</td><td>2</td><td>2</td><td>7</td><td>8</td><td><strong>5</strong></td></tr>
+            <tr><td><span class="rank-badge">13</span></td><td><span class="team-name">Toulouse</span></td><td>5</td><td>1</td><td>2</td><td>2</td><td>7</td><td>9</td><td><strong>5</strong></td></tr>
+            <tr><td><span class="rank-badge">14</span></td><td><span class="team-name">Marseille</span></td><td>5</td><td>1</td><td>0</td><td>4</td><td>7</td><td>8</td><td><strong>3</strong></td></tr>
+            <tr><td><span class="rank-badge">15</span></td><td><span class="team-name">Lorient</span></td><td>5</td><td>1</td><td>2</td><td>2</td><td>5</td><td>6</td><td><strong>5</strong></td></tr>
+            <tr><td><span class="rank-badge">16</span></td><td><span class="team-name">Nice</span></td><td>5</td><td>1</td><td>2</td><td>2</td><td>3</td><td>6</td><td><strong>5</strong></td></tr>
+            <tr><td><span class="rank-badge">17</span></td><td><span class="team-name">Troyes</span></td><td>5</td><td>1</td><td>1</td><td>3</td><td>4</td><td>11</td><td><strong>4</strong></td></tr>
+            <tr><td><span class="rank-badge">18</span></td><td><span class="team-name">Le Havre</span></td><td>5</td><td>0</td><td>2</td><td>3</td><td>4</td><td>7</td><td><strong>2</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="mercato" class="market-section">
+      <div class="container section">
+        <div class="section-heading light">
+          <div><span class="eyebrow">TRANSFERTS</span><h2>Le mercato en direct</h2></div>
+          <span class="market-live"><span class="pulse-dot"></span> ACTIF</span>
+        </div>
+        <div class="transfer-grid">
+          <article class="transfer-card"><div class="transfer-status official">OFFICIEL</div><div class="player-avatar">👤</div><h3>Nouvelle signature</h3><p>Un renfort majeur rejoint son nouveau club.</p><div class="transfer-arrow">→</div></article>
+          <article class="transfer-card"><div class="transfer-status rumor">RUMEUR</div><div class="player-avatar">⭐</div><h3>Un dossier à surveiller</h3><p>Les négociations pourraient avancer rapidement.</p><div class="transfer-arrow">→</div></article>
+          <article class="transfer-card"><div class="transfer-status confirmed">CONFIRMÉ</div><div class="player-avatar">⚡</div><h3>Accord trouvé</h3><p>Les derniers détails du transfert sont en cours.</p><div class="transfer-arrow">→</div></article>
+          <article class="transfer-card"><div class="transfer-status rumor">RUMEUR</div><div class="player-avatar">🔥</div><h3>Une piste offensive</h3><p>Un grand club s'intéresse à un attaquant.</p><div class="transfer-arrow">→</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="videos" class="container section">
+      <div class="section-heading"><div><span class="eyebrow">FOOT EN IMAGES</span><h2>À voir cette semaine</h2></div><button class="outline-btn">Toutes les vidéos →</button></div>
+      <div class="video-grid">
+        <article class="video-card"><div class="video-thumb v1"><span>▶</span></div><h3>Les meilleurs moments de la journée</h3><small>6 min • 128 K vues</small></article>
+        <article class="video-card"><div class="video-thumb v2"><span>▶</span></div><h3>Décryptage : le système qui fait la différence</h3><small>9 min • 94 K vues</small></article>
+        <article class="video-card"><div class="video-thumb v3"><span>▶</span></div><h3>Dans les coulisses d'un match</h3><small>12 min • 72 K vues</small></article>
+      </div>
+    </section>
+  </main>
+
+  <div class="search-panel" id="searchPanel">
+    <div class="search-inner container">
+      <button class="close-search" id="closeSearch">×</button>
+      <span class="eyebrow">RECHERCHE</span>
+      <h2>Que cherches-tu ?</h2>
+      <div class="big-search"><span>⌕</span><input id="searchInput" type="search" placeholder="Joueur, club, compétition..."></div>
+      <div id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="articleModal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">×</button>
+      <span class="tag tag-red" id="modalCategory">À LA UNE</span>
+      <h2 id="modalTitle"></h2>
+      <p class="modal-meta" id="modalMeta"></p>
+      <div class="modal-image" id="modalImage"></div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <button id="backTop" class="back-top" aria-label="Retour en haut">↑</button>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><a class="logo footer-logo" href="#accueil">⚽ FOOT<span>PULSE</span></a><p>Le football raconté autrement. News, résultats, mercato et analyses.</p></div>
+      <div><h4>Navigation</h4><a href="#actus">Actualités</a><a href="#resultats">Résultats</a><a href="#classement">Classement</a><a href="#mercato">Mercato</a></div>
+      <div><h4>Suivez-nous</h4><a href="#">Instagram</a><a href="#">X / Twitter</a><a href="#">YouTube</a><a href="#">TikTok</a></div>
+      <div><h4>FootPulse</h4><a href="#">À propos</a><a href="#">Contact</a><a href="#">Mentions légales</a><a href="#">Confidentialité</a></div>
+    </div>
+    <div class="container copyright">© 2026 FootPulse. Site de démonstration — contenus fictifs.</div>
+  </footer>
+  <script src="monjavascript.js"></script>
+</body>
+</html>
